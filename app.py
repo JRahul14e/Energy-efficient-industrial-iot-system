@@ -15,6 +15,12 @@ import os
 from sklearn.metrics import roc_curve, auc
 
 app = Flask(__name__)
+@app.route('/google7418adf84a993472.html')
+def google_verification():
+    return send_file(
+        os.path.join(app.root_path, 'google7418adf84a993472.html'),
+        mimetype='text/html'
+    )
 app.config['SECRET_KEY'] = os.environ.get('SESSION_SECRET', 'dev-secret-key-change-in-production')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
