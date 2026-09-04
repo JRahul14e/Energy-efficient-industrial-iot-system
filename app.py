@@ -18,6 +18,23 @@ app = Flask(__name__)
 @app.route('/google7418adf84a993472.html')
 def google_verification():
     return 'google-site-verification: google7418adf84a993472.html'
+@app.route('/sitemap.xml')
+def sitemap():
+    urls = [
+        "https://energy-efficient-industrial-iot-system.onrender.com/",
+        "https://energy-efficient-industrial-iot-system.onrender.com/login",
+        "https://energy-efficient-industrial-iot-system.onrender.com/signup",
+    ]
+
+    xml = '<?xml version="1.0" encoding="UTF-8"?>'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+
+    for url in urls:
+        xml += f'<url><loc>{url}</loc></url>'
+
+    xml += '</urlset>'
+
+    return xml, 200, {'Content-Type': 'application/xml'}
 app.config['SECRET_KEY'] = os.environ.get('SESSION_SECRET', 'dev-secret-key-change-in-production')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
