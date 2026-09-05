@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}IoT Production System{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>{% block title %}Energy Efficient Industrial IoT System{% endblock %}</title>
+
+    <meta name="description"
+          content="Energy Efficient Industrial IoT System for industrial energy monitoring, prediction, maintenance, and efficiency optimization.">
+
+    <meta name="keywords"
+          content="Industrial IoT, IIoT, energy efficiency, predictive maintenance, IoT monitoring, industrial energy">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical"
+          href="https://energy-efficient-industrial-iot-system.onrender.com/">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     {% if current_user.is_authenticated %}
