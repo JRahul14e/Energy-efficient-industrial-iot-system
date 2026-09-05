@@ -35,6 +35,13 @@ def sitemap():
     xml += '</urlset>'
 
     return xml, 200, {'Content-Type': 'application/xml'}
+@app.route('/robots.txt')
+def robots():
+    return """User-agent: *
+Allow: /
+
+Sitemap: https://energy-efficient-industrial-iot-system.onrender.com/sitemap.xml
+""", 200, {'Content-Type': 'text/plain'}
 app.config['SECRET_KEY'] = os.environ.get('SESSION_SECRET', 'dev-secret-key-change-in-production')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
